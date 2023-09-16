@@ -17,13 +17,12 @@ class Model
         $conn = NULL;
         try {
             //Install database
-            $conn = new PDO("mysql:host=" . config('host') . ";charset=utf8", config('user'), config('pass'));
+            $conn = new PDO("pgsql:host=".config('host').";port=". config('port'),config('user'),config('pass'));
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = "CREATE DATABASE IF NOT EXISTS " . config('db_name');
             // use exec() because no results are returned
             $conn->exec($sql);
-          
             $conn->exec("USE " . config('db_name'));
         } catch (PDOException $e) {
             dd($e->getMessage());
@@ -138,6 +137,25 @@ class Model
         if ($stmt->execute()) :
             $result = true;
         else :
+            $result = false;
+            $this->disconnect($conn);
+        endif;
+        return $result;
+    }
+
+    /**
+     * @param string $sql
+     * @return bool|string
+     */
+    public function CreateTable(string $sql)
+    {
+        $result = null;
+        $conn = $this->Connect();
+        //Create table into Database
+        $stmt = $conn->prepare($sql);
+        if ($stmt->execute()):
+            $result = true;
+        else:
             $result = false;
             $this->disconnect($conn);
         endif;

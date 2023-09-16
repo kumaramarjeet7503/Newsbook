@@ -41,5 +41,11 @@ return [
         "name" => "getnews",
         'controller' => \Controllers\News::class,
         'method' => 'getnews'
+    ],
+    [
+        "url" => "database/create-user-table",
+        "name" => "createusers",
+        'controller' => \Controllers\DatabaseMigration::class,
+        'method' => 'createUsers'
     ]
 ];
