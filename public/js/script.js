@@ -1,13 +1,14 @@
 $(document).ready(function () {
     console.log("loaded........");
     getNews();
+    window.onload = scrollToTop() ;
 });
 
 
 mobiscroll.settings = {
     lang: 'en',      // Specify language like: lang: 'pl' or omit setting to use default
     theme: 'ios',              // Specify theme like: theme: 'ios' or omit setting to use default
-        themeVariant: 'light' 
+        themeVariant: 'light',
 }
 
 //  Get news from the news API
@@ -20,17 +21,19 @@ mobiscroll.settings = {
         success:function(response){
            
             var jsonObject = JSON.parse(response);
+            console.log(jsonObject);
+            var totalResults =  jsonObject['totalResults'] ;
             if(jsonObject['status'] == 'ok')
             {
                 var count = 1 ;
                 var articles = jsonObject['articles'] ;  
-                console.log(articles[0]);
+                
                 articles.forEach(function (article) {
                     
                     createNewsCard(article,count);
                     count++;
-                });                
-                 
+                });      
+                setPagination(totalResults);                
             }
           
         },
@@ -72,10 +75,10 @@ function createNewsCard(article,count)
     var hr = $('<hr>').attr('style','border-color : white; height : 3px') ;
 
     // Append the card header, image, and content to the card div
-    cardDiv.append(cardHeader, linkPost, linkPost1,cardDesc);
+    cardDiv.append(cardHeader, linkPost, linkPost1,cardDesc,hr);
     // linkPost.append(cardDiv); 
     // Append the card div to a container element (e.g., a div with the id "container")
-    $('#news-card').append(cardDiv,hr);
+    $('#news-card').append(cardDiv);
 
 
 }
@@ -94,4 +97,29 @@ function getDateFormatted(dateTime)
         ('0' + currentDate.getHours()).slice(-2) + ':' +
         ('0' + currentDate.getMinutes()).slice(-2) ;
         return formattedDate ;
+}
+
+function setPagination(totalResults)
+{
+    $(".wrapper .mbsc-card").slice(4).hide();
+    $('#pagination').pagination({
+
+        // Total number of items present
+        // in wrapper class
+        items: totalResults,
+
+        // Items allowed on a single page
+        itemsOnPage: 4, 
+        onPageClick: function (e) {
+            $(".wrapper .mbsc-card").hide()
+                .slice(4*(e-1),
+                4+ 4* (e - 1)).show();
+                scrollToTop();
+        }                   
+    });
+}
+
+// This function scrolls to the top of the page
+function scrollToTop() {
+    window.scrollTo(0, 0);
 }

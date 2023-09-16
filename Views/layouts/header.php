@@ -6,13 +6,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link text-white" >Newsbook</a>
+        <a class="nav-link text-white" ><h5>Newsbook</h5></a>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="/site/login">Login</a>
+        <a class="nav-link text-white" href="/site/login"><h5>Login</h5></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/site/signup">SignUp</a>
+        <a class="nav-link text-white" href="/site/signup"><h5>SignUp</h5></a>
       </li>
     </ul>
   </div>

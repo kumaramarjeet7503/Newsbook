@@ -1,6 +1,4 @@
 <?php
-
-
 return [
     [
         "url" => "/",
@@ -45,9 +43,9 @@ return [
         'method' => 'getnews'
     ],
     [
-        "url" => "rest/index",
-        "name" => "rest",
-        'controller' => \Controllers\Rest::class,
-        'method' => 'index'
-    ],
+        "url" => "database/create-user-table",
+        "name" => "createusers",
+        'controller' => \Controllers\DatabaseMigration::class,
+        'method' => 'createUsers'
+    ]
 ];
