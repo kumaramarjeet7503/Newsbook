@@ -2,10 +2,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       <link rel="stylesheet" href="public/css/mobiscroll.jquery.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="public/css/mobiscroll.jquery.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/simplePagination.min.css">
+        <link rel="stylesheet" href="public/css/style.css">
         <title>News</title>
     </head>
     <body>
@@ -17,7 +19,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link text-white" >Newsbook</a>
+                <a class="nav-link text-white" ><h5>Newsbook</h5></a>
             </li>
         </ul>
         </div>
@@ -34,13 +36,18 @@
                 <!-- // Start of container -->
             
             <div mbsc-page class="demo-social">
-                <div style="height:100%" id="news-card">
+                <div style="height:100%" >
+                <div class="wrapper" id="news-card" >
                 <!-- Start of slider -->
 
                 <!-- End of slider -->
+               
                 </div>
+                </div>
+                <div id="pagination" class="mt-2"></div>
             </div>
 `
+
             <!-- // End of container -->
          </div>
 
@@ -48,6 +55,7 @@
          <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.min.js"></script>
         <script src="/public/js/mobiscroll.jquery.min.js"></script>
         <script src="/public/js/script.js"></script>
     </body>

@@ -1,6 +1,4 @@
 <?php
-
-
 return [
     [
         "url" => "/",
@@ -43,11 +41,5 @@ return [
         "name" => "getnews",
         'controller' => \Controllers\News::class,
         'method' => 'getnews'
-    ],
-    [
-        "url" => "rest/index",
-        "name" => "rest",
-        'controller' => \Controllers\Rest::class,
-        'method' => 'index'
-    ],
+    ]
 ];
