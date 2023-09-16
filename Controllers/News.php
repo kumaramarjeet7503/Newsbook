@@ -6,18 +6,29 @@ use Controllers\Site;
 class News extends \Core\BaseController
 {
     protected string $Model = "Users";
+
+    /**
+     * @return render index
+     */
     public function index()
     {
         view('news/index');
     }
 
+    /**
+     * Get news from API response
+     * @return array
+     */
     public function getnews()
     { 
        $resp =  $this->invokePostApi() ;
        print_r($resp); 
     }
 
-    
+    /**
+     * News API integration
+     * @return array
+     */
     private function invokePostApi(){	
 		$url = config("news_api");
         $userAgent = 'user-agent';

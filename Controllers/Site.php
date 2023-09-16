@@ -5,12 +5,20 @@ namespace Controllers;
 class Site extends \Core\BaseController
 {
     protected string $Model = "Users";
+
+    /**
+     * render index page 
+     */
     public function index()
     {
         $Users = $this->Database->getUsers();
         view('site/index' , compact('Users'));
     }
 
+    /**
+     * @param array $_POST
+     * @return render login 
+     */
     public function login()
     {
         $error = false ;
@@ -28,6 +36,10 @@ class Site extends \Core\BaseController
         view('site/login',['error'=>$error]);
     }
 
+    /**
+     * @param array $_POST
+     * @return  render login
+     */
     public function signup()
     {
         if(!empty($_POST))
@@ -39,6 +51,10 @@ class Site extends \Core\BaseController
         view('site/signup' );
     }
 
+    /**
+     * @param array $_POST
+     * @return  render login
+     */
     public function logout()
     {
         session_destroy();
