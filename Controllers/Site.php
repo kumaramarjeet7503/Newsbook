@@ -33,6 +33,7 @@ class Site extends \Core\BaseController
         if(!empty($_POST))
         {
             $Users = $this->Database->registerUser();
+            $_SESSION['register'] = true;
            return $Users;
         }
         view('site/signup' );
