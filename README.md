@@ -27,5 +27,5 @@ Newsbook is a web application that aggregates news articles from various sources
 ![Screenshot 2](screenshots/registration-successful.png)
 ![Screenshot 2](screenshots/news-dashboard.png)
 
-## Video
-<iframe width="560" height="315" src="screenshots/newsbook" frameborder="0" allowfullscreen></iframe>
+## Video tutorial
+[Link Text](https://drive.google.com/file/d/1LN7EToPOIuo2FYTJMZuhRcExK7HEBN-I/view?usp=drive_link)
