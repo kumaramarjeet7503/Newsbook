@@ -1,8 +1,9 @@
 <?php
 return [
-    "host" => 'localhost:3306',
-    "user" => 'root',
-    "pass" => '',
+    "host" => 'ics-qa.postgres.database.azure.com',
+    "port"=> '5432',
+    "user" => 'php_user',
+    "pass" => 'VEZHSVPYFTRS',
     "db_name" => 'php_assignment',
     "subdirectory" => "",
     "app_url" => 'http://news-api.localhost/',
