@@ -2,6 +2,9 @@
 Newsbook is a web application that aggregates news articles from various sources, allowing users to stay updated with the latest headlines and articles. Built using modern web technologies, this project provides a user-friendly interface for browsing and searching news content from different categories and publishers.
  Watch [Newsbook Tutorial](https://drive.google.com/file/d/1LN7EToPOIuo2FYTJMZuhRcExK7HEBN-I/view?usp=drive_link)
 
+
+ ![Screenshot 2](screenshots/news-dashboard.png)
+
 ## Installation
 1. Clone this repository.
 2. Create a virtual host for your application and map it into config.php
